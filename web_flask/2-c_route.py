@@ -17,7 +17,7 @@ def page2():
     return "HBNB"
 
 # route 3:
-@app.route("/c<text>", strict_slashes=False)
+@app.route("/c/<text>", strict_slashes=False)
 def page3(text):
     text = text.replace("_", " ")
     return f"C {text}"
