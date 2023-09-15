@@ -5,13 +5,13 @@ from flask import Flask
 app = Flask(__name__)
 
 
-#route 1:
+# route 1:
 @app.route("/", strict_slashes=False)
 def home():
     return "Hello HBNB!"
 
 
-#route 2:
+# route 2:
 @app.route("/hbnb", strict_slashes=False)
 def page2():
     return "HBNB"
