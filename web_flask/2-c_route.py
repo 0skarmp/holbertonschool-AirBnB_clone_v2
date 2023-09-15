@@ -16,6 +16,7 @@ def home():
 def page2():
     return "HBNB"
 
+
 # route 3:
 @app.route("/c/<text>", strict_slashes=False)
 def page3(text):
