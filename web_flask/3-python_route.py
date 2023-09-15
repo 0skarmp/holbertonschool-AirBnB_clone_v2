@@ -25,8 +25,9 @@ def page3(text):
 
 
 # route 4:
+@app.route('/python/', strict_slashes=False)
 @app.route("/python/<text>", strict_slashes=False)
-def page4(text):
+def page4(text="is_cool"):
     text = text.replace("_", " ")
     return f"Python {text}"
 
