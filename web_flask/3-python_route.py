@@ -28,7 +28,7 @@ def page3(text):
 @app.route("/python/<text>", strict_slashes=False)
 def page4(text):
     text = text.replace("_", " ")
-    return f"C {text}"
+    return f"Python {text}"
 
 
 if __name__ == '__main__':
