@@ -31,7 +31,7 @@ def page3(text):
 @app.route('/python/', strict_slashes=False)
 @app.route("/python/<text>", strict_slashes=False)
 def page4(text="is_cool"):
-     """This function takes an optional 'text' parameter and displays 'Python {text}' on the page."""
+    """function,text parameter & displays'Python{text}'on another the page."""
     text = text.replace("_", " ")
     return f"Python {text}"
 
@@ -39,7 +39,7 @@ def page4(text="is_cool"):
 # route 5:
 @app.route("/number/<int=n>", strict_slashes=False)
 def page5(n):
-    """This function takes an integer 'n' and displays if it is a number on the page."""
+    """function takes an integer'n'& displays if it is a number on the page."""
     if isinstance(n, int):
         return f"{n}is a number"
 
