@@ -8,18 +8,21 @@ app = Flask(__name__)
 # route 1:
 @app.route("/", strict_slashes=False)
 def home():
+    """This function returns a greeting on the home page."""
     return "Hello HBNB!"
 
 
 # route 2:
 @app.route("/hbnb", strict_slashes=False)
 def page2():
+    """This function returns 'HBNB'."""
     return "HBNB"
 
 
 # route 3:
 @app.route("/c/<text>", strict_slashes=False)
 def page3(text):
+    """This function takes a 'text' parameter and displays it on the page."""
     text = text.replace("_", " ")
     return f"C {text}"
 
@@ -28,6 +31,7 @@ def page3(text):
 @app.route('/python/', strict_slashes=False)
 @app.route("/python/<text>", strict_slashes=False)
 def page4(text="is_cool"):
+     """This function takes an optional 'text' parameter and displays 'Python {text}' on the page."""
     text = text.replace("_", " ")
     return f"Python {text}"
 
@@ -35,6 +39,7 @@ def page4(text="is_cool"):
 # route 5:
 @app.route("/number/<int=n>", strict_slashes=False)
 def page5(n):
+    """This function takes an integer 'n' and displays if it is a number on the page."""
     if isinstance(n, int):
         return f"{n}is a number"
 
