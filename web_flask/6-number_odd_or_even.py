@@ -54,9 +54,9 @@ def page6(n):
 def page7(n):
     if isinstance(n, int):
         if (n % 2) == 0:
-            num = f"{n} is even"
+            num = "even"
         else:
-            num = f"{n}is odd"
+            num = "odd"
         dicitionary = {"nt": n, "eo": num}
         return render_template("6-number_odd_or_even.html", **dictionary)
 
