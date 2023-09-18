@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""
-script to connect html with flask
-
-"""
+'''srcipt to start web flask'''
 
 from flask import Flask
 app = Flask(__name__)
