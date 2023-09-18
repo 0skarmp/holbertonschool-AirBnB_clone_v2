@@ -48,18 +48,12 @@ def page6(n):
     if isinstance(n, int):
         return render_template("5-number.html", num=n)
 
-
 # route 7
 @app.route("/number_odd_or_even/<int:n>", strict_slashes=False)
 def page7(n):
     if isinstance(n, int):
         if (n % 2) == 0:
-            num = "even"
-        else:
-            num = "odd"
-        dicitionary = {"nt": n, "eo": num}
-        return render_template("6-number_odd_or_even.html", **dictionary)
-
-
-if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0", port="5000")
+            num = f"{n} is even"
+        else: 
+                num = f"{n}is odd"
+        return render_template("6-number_odd_or_even.html", num=num)
