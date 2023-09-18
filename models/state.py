@@ -7,7 +7,7 @@ from sqlalchemy import Column, String
 from sqlalchemy.orm import relationship
 
 
-if getenv("HBNB_TYPE_STORAGE") =="db":
+if getenv("HBNB_TYPE_STORAGE") == "db":
     class State(BaseModel, Base):
         """class state"""
         __tablename__ = "states"
@@ -19,11 +19,11 @@ else:
     class State(BaseModel):
         name = ""
 
-     @property
-        def cities(self):
-            from models.city import City
-            new_list_cities = []
-            for city in models.storage.all(City).values():
-                if city.state_id == self.id:
-                    new_list_cities.append(city)
-            return new_list_cities
+    @property
+    def cities(self):
+        from models.city import City
+        new_list_cities = []
+        for city in models.storage.all(City).values():
+            if city.state_id == self.id:
+                new_list_cities.append(city)
+        return new_list_cities
