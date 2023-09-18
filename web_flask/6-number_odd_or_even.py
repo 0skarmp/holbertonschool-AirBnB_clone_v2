@@ -55,5 +55,9 @@ def page7(n):
         if (n % 2) == 0:
             num = f"{n} is even"
         else: 
-                num = f"{n}is odd"
+            num = f"{n}is odd"
         return render_template("6-number_odd_or_even.html", num=num)
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
