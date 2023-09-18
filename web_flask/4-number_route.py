@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""script to connect html with flask"""
+"""
+script to connect html with flask
+
+"""
 
 from flask import Flask
 app = Flask(__name__)
@@ -41,7 +44,7 @@ def page4(text="is_cool"):
 def page5(n):
     """function takes an integer'n'& displays if it is a number on the page."""
     if isinstance(n, int):
-        return f"{n}is a number"
+        return f"{n} is a number"
 
 
 if __name__ == '__main__':
