@@ -43,17 +43,19 @@ def page5(n):
 @app.route("/number_template/<int:n>", strict_slashes=False)
 def page6(n):
     if isinstance(n, int):
-        return render_template("5-number.html", "n=n")
+        return render_template("5-number.html", "num=n")
 
 
 # route 7
 @app.route("/number_odd_or_even/<int:n>", strict_slashes=False)
 def page7(n):
     if isinstance(n, int):
-        num = f"{n} is odd"
-        if n % 2 == 0:
+        if (n % 2) == 0:
             num = f"{n} is even"
-            return render_template("6-number_odd_or_even.html", num=num)
+        else:
+            num:
+                num = f"{n}is odd"
+        return render_template("6-number_odd_or_even.html", num=num)
 
 
 if __name__ == '__main__':
