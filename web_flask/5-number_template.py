@@ -1,49 +1,50 @@
 #!/usr/bin/python3
-"""script to start a flask web"""
+""" script that starts a Flask web application """
+from flask import Flask
+from flask import render_template
 
-from flask import Flask, render_template
+
 app = Flask(__name__)
 
 
-# route 1:
-@app.route("/", strict_slashes=False)
+@app.route('/', strict_slashes=False)
 def home():
+    """ return a hello string """
     return "Hello HBNB!"
 
 
-# route 2:
-@app.route("/hbnb", strict_slashes=False)
-def page2():
+@app.route('/hbnb', strict_slashes=False)
+def home2():
+    """ Return a hbnb string """
     return "HBNB"
 
 
-# route 3:
-@app.route("/c/<text>", strict_slashes=False)
+@app.route('/c/<text>', strict_slashes=False)
 def page3(text):
-    text = text.replace("_", " ")
-    return f"C {text}"
+    """ returns a string depending on the text they give us as an argument """
+    new_text = text.replace('_', ' ')
+    return f"C {new_text}"
 
 
-# route 4:
 @app.route('/python/', strict_slashes=False)
-@app.route("/python/<text>", strict_slashes=False)
-def page4(text="is_cool"):
-    text = text.replace("_", " ")
-    return f"Python {text}"
+@app.route('/python/<text>', strict_slashes=False)
+def page4(text='is cool'):
+    """ returns a string depending on the text they give us as an argument """
+    new_text = text.replace('_', ' ')
+    return f"Python {new_text}"
 
 
-# route 5:
-@app.route("/number/<int:n>", strict_slashes=False)
+@app.route('/number/<int:n>', strict_slashes=False)
 def page5(n):
     if isinstance(n, int):
-        return f"{n}is a number"
+        return "{} is a number".format(n)
 
-# route 6:
-@app.route("/number_template <int:n>", strict_slashes=False)
+
+@app.route('/number_template/<int:n>', strict_slashes=False)
 def page6(n):
     if isinstance(n, int):
-        return render_template("5-number.html", num=n)
+        return render_template('5-number.html', num=n)
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0", port="5000")
+    app.run(host='0.0.0.0', port=5000)
